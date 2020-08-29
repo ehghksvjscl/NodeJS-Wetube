@@ -47,3 +47,17 @@ mod package.json
 - helmet
 - body-parser
 - cookie-parser
+
+#9 setting router.js
+- 라우터 초기세팅 진행 app.js , init.js , router.js
+
+#10 MVC
+M : data
+V : how does the data look
+C : function that loos for the data
+
+#11 Router 정리
+
+#12 Controller 정리
+
+#13 View 정의(pug 사용)
