@@ -61,3 +61,11 @@ C : function that loos for the data
 #12 Controller 정리
 
 #13 View 정의(pug 사용)
+
+#14 Node.js 템플릿 엔진 (pug) 설치
+- install
+- app.set("view engine","pug")
+
+#15 One single source of truth(한 곳에서만 정보를 보관)
+- 버그를 최소화 하는 법칙
+- 템플릿 작성(layout,partials)
