@@ -34,6 +34,16 @@ bable install
 nodemon이란: 소스 저상시 자동으로 node 재시작
 
 npm install nodemon -D
-    -D 옵션 : 개발 환경에만 적용
+
+    - D 옵션 : 개발 환경에만 적용
 
 mod package.json
+
+#7 express 미들웨어 정의(중간에 실행 시키는 함수)
+
+#8 install outher 미들웨어
+
+- morgan
+- helmet
+- body-parser
+- cookie-parser
