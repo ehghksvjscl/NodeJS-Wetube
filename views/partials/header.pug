@@ -1,9 +1,21 @@
 header.header
     .header__col
-        i.fab.fa-youtube
+        a(href=routes.home)
+            i.fab.fa-youtube
+    .header__col
+        form(action=routes.search, method="get")
+            input(type="text",placeholder="동영상 검색",name="term")
     .header__col
         ul
-            li
-                a(href="#") Join
-            li
-                a(href="#") LogIn
+            if !user.isAuthenticated
+                li
+                    a(href=routes.join) Join
+                li
+                    a(href=routes.login) LogIn
+            else
+                li
+                    a(href=`/videos${routes.upload}`) Upload
+                li
+                    a(href=routes.userDetail(user.id)) Profile
+                li
+                    a(href=routes.logout) Logout

@@ -1,3 +1,16 @@
+## pages:
+- [ ] Home
+- [x] Join
+- [x] Login
+- [x] Search
+- [ ] User Detail
+- [ ] Edit Profile
+- [ ] Change Password
+- [ ] Upload
+- [ ] Video Detail
+- [ ] Edit Video
+
+
 #1 
 install express
 
@@ -69,3 +82,20 @@ C : function that loos for the data
 #15 One single source of truth(한 곳에서만 정보를 보관)
 - 버그를 최소화 하는 법칙
 - 템플릿 작성(layout,partials)
+
+#16 특정 변수를 View로 넘기는법 (미들웨어 사용)
+- 미들웨어.js create
+- 시용 #{변수명}
+
+#17 쿼리 파라미터
+- 참고 videoControllers.js
+
+#18 sample data db.js create
+
+#19 mixin 템플릿
+
+#20 routes.js에서 id 넘기기(함수 사용)  
+
+#21 mongodb , dotenv install
+
+#22 create model : Video
