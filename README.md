@@ -99,3 +99,15 @@ C : function that loos for the data
 #21 mongodb , dotenv install
 
 #22 create model : Video
+
+#23 create model : Comments
+
+#24 async, try catch
+
+#25 multer install 
+- multer은 파일을 업로드 하면 경로를 던져주는 미들웨어이다.
+- 참고 : https://www.npmjs.com/package/multer
+
+#26 upload video 
+- multipart/form-data로 보낸 파일을 받는다.
+- middlewares.js에서 multer로직을 작성.
