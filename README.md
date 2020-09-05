@@ -111,3 +111,38 @@ C : function that loos for the data
 #26 upload video 
 - multipart/form-data로 보낸 파일을 받는다.
 - middlewares.js에서 multer로직을 작성.
+
+#27 change multer url (uploads/video)
+
+#28 How to controll Mongodb
+ - use wetube
+ - show collections
+ - db.videos.remove
+
+ #29 video Detail 수정(video 정보 가져오기[파람값])
+ - console.log(req.params.id) / 라우터에 이미 :id를 지정 했기 떄문에 가져올 수 있다.
+ - const {} 형태로 id 값 가져오기
+ - video 변수 지정 await 적용 findByid를 통해 가져오기 (https://mongoosejs.com/docs/api.html#model_Model.findById) 참고
+ - try catch문으로 예외처리 (비디오 id가 없을 경우) catch일 경우 error home으로 redirect하기 
+ - videoDetail 템플릿 수정  
+    1. 동영상 .video__player / src = `/${video.fileUrl}`
+    2. link / a .video__info / href=routes.editVideo [/:id/edit] / text = 비디오 수정
+    3. title .video__info .video__title / h5
+    4. views .video__info .video__views . span
+    4. description .video__info .video__description p
+
+#30 editVideo Mod
+ - editVideo 수정 (routes.js) if => return /videos/${id}/edit elss EDIT_VIDEO
+ - videoDitail의 editVideo 부분 수정
+ - videoRouter.js editVideo 부분 수정
+ - C : editVideo Post function add Get Modify / videoRouter.js 주석으로 구분 및 editVideo 수정(post,get)
+ - C : get [ geteditVideo / const {파람} /  #29번 처럼 / ] / 템플릿 Title,Description = 수정(video.title,description) / from 수정 video.id
+ - C : post [ update code 짜기 ] 
+      - Model.findOneAndUpdate() 사용 참고 : https://mongoosejs.com/docs/api.html#model_Model.findOneAndUpdate
+      - try redirect routes.videoDitail catch redirect routes.home
+
+#31 Delete Video 
+ - routes.js 수정 / return `/videos/${id}/delete`
+ - videoDetail 탬플릿 수정
+ - videoRouter.js 수정
+ - Delete Video

@@ -16,6 +16,7 @@ const app = express();
 app.set("view engine","pug")
 
 // 미들 웨어
+app.use("/uploads",express.static("uploads"))
 app.use(helmet()); 
 app.use(cookieParser());
 app.use(bodyParser.json());
