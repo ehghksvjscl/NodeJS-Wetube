@@ -146,3 +146,22 @@ C : function that loos for the data
  - videoDetail 탬플릿 수정
  - videoRouter.js 수정
  - Delete Video
+
+#32 sort home 
+- home sort DESC and two video 
+
+#33 Search
+- let video [] = ~~~
+- videoController.js Search 기능 추가 (find({title: ${regex: searchingBy, $options: "i"}})
+    - "i" : 옵션은 덜 민감하게 검색
+- search 템플릿 if 추가 (비디오 길이 검사 후 없으면 메시지 뿌리기 / h5)
+- videoDetail 탬플릿에 comments추가 .video.comments / if 문으로 분기(span) .video__commnet-number 1 comment / else ${video.comments.lenght} commendts / 해당 부분은 영어권 나라에 해당 하므로 커스텀
+
+#34 Webpack
+- mpn install webpack webpack-cli
+- package.json 수정 스크립트 { dev:server , dev:assets}
+- assets 폴더 생성 -> 현재 프로젝트 참고(주의 사항 : webpack.config.js는 ES6를 사용하지 못하고 옛날 JS를 써야 하는다는 점)
+- 이해가 잘 안감. (참고 사이트 : https://webpack.js.org/concepts/#loaders)
+- 설정할게 많음....
+
+#35 SCSS

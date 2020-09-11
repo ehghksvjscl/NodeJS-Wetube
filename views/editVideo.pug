@@ -6,7 +6,8 @@ block content
             input(type="text",name="title",placeholder="제목",value=video.title)
             textarea(type="text",name="description",placeholder="설명")=video.description
             input(type="submit",values="Upload Video")
-    a.form-container__link--delete.form-container__link(href=`${routes.deleteVideo(video.id)}`) Delete Video
+            a.form-container__link(href=`${routes.deleteVideo(video.id)}`) 
+                button.delete Delete Video
             
 
         

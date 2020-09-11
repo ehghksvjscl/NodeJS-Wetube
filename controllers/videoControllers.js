@@ -1,19 +1,25 @@
 import routes from "../routers/routes";
 import Video from "../models/Video";
-import { Mongoose } from "mongoose";
-import { permittedCrossDomainPolicies } from "helmet";
 
 export const home = async (req,res) => {
     try {
-        const video = await Video.find({});
+        const video = await Video.find({}).sort({_id:-1});
         res.render("home", {pageTitle:"Home",video})
     } catch(error) {
         console.log(error);
         res.render("home", {pageTitle:"Home",video})
     }
 }
-export const search = (req,res) => {
+export const search = async(req,res) => {
     const {query: { term:searchingBy }} = req
+    let video = []
+    try {
+        video = await Video.find({
+            title: { $regex: searchingBy, $options: "i"}
+        });
+    } catch (error) {
+        console.log(error)
+    }
     return res.render("search",{pageTitle:"Search",searchingBy,video});
 }
 export const videos = (req,res) => res.render("videos",{pageTitle:"Videos"});

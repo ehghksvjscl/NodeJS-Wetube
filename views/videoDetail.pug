@@ -1,12 +1,14 @@
 extends layouts/main
 
 block content
-    .form-container
+    .video-detail__container
         .video__player
             video(src=`/${video.fileUrl}`,width="600",controls=true)
         .video__info
-            a(href=routes.editVideo(video.id)) 비디오 수정
+            a(href=routes.editVideo(video.id)) 
+                button 비디오 수정
             h5.video__title=video.title
-            span.video__views=video.views
             p.video__description=video.description
-        
+            span.video__views #{video.views}뷰
+        .video__comments
+            span.video__comment-number #{video.comments.length} 댓글 
