@@ -165,3 +165,11 @@ C : function that loos for the data
 - 설정할게 많음....
 
 #35 SCSS
+
+#36 Authentication Node JS
+ - Passport를 사용해서 쉽게 인증 구현
+ - User.js 모듈 생성
+ - Passport-Local Mongoose -> User에 대한 기본적인 기능 만들어줌(패스워드 변경, 패스워드 확인 등등)
+     - npm install passport-local-mongoose
+     - npm i passport passport-local -> 일반 User Login
+ - passport.js 정의
