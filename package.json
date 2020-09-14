@@ -22,6 +22,7 @@
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "helmet": "^4.1.0",
     "helmet-csp": "^3.1.0",
+    "localtunnel": "^2.0.0",
     "mini-css-extract-plugin": "^0.11.0",
     "mongoose": "^5.10.2",
     "morgan": "^1.10.0",
@@ -40,7 +41,7 @@
     "webpack-cli": "^3.3.12"
   },
   "scripts": {
-    "dev:server": "nodemon --exec babel-node init.js --ignore 'scss' ",
+    "dev:server": "nodemon --exec babel-node init.js --ignore 'scss' --ignore 'static' ",
     "dev:assets": "WEBPACK_ENV=development webpack -w",
     "build:assets": "WEBPACK_ENV=production webpack"
   },

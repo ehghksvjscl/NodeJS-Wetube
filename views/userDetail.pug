@@ -3,5 +3,11 @@ extends layouts/main
 block content
     .user-profile
         .user_profile__header
-            img.avatar(src=user.avatarUrl)
+            img.u-avatar(src=user.avatarUrl)
             h4.profile__username=user.name
+        if user.id === loggedUser.id
+            .user-profile__btns
+                a(href=`/users${routes.editProfile}`)
+                    button.user-profile__edit 프로파일 수정
+                a(href=`/users${routes.changePassword}`)
+                    button.uer-profile__change 비밀번호 변경
