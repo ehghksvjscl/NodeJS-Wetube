@@ -36,5 +36,28 @@
         .video__comment-number {
             font-size: 18px;
         }
+        .add__comment {
+            margin-top: 25px;
+            width: 100%;
+            input {
+                width: 100%;
+            }
+        }
+        .video__comments-list {
+            margin-top: 20px;
+            li {
+                background-color: #3498db;
+                color: white;
+                padding: 15px 30px;
+                border-radius: 20px;
+                border-bottom-left-radius: 0px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                &:not(:last-child) {
+                    margin-bottom: 20px;
+                }
+            }
+        }
     }
 }

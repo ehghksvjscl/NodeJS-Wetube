@@ -1,5 +1,6 @@
 import routes from "../routers/routes";
 import Video from "../models/Video";
+import Comment from "../models/Comment";
 
 export const home = async (req,res) => {
     try {
@@ -77,7 +78,7 @@ export const videoDetail = async (req,res) => {
         params: {id}
     } = req;
     try {
-        const video = await Video.findById(id).populate("creator");
+        const video = await Video.findById(id).populate("creator").populate("comments");
         res.render("videoDetail",{pageTitle:"Video Detail", video})
     } catch (error) {
         console.log(error)
@@ -113,6 +114,27 @@ export const postRegisterView = async(req,res) => {
         video.views = video.views + 1; // 비디오 카운트 + 1
         video.save(); // 저장
         res.status(200) // 코드 정상 처리
+    } catch (error) {
+        res.status(400);
+    } finally {
+        res.end();
+    }
+}
+
+export const postAddComment = async(req,res) => {
+    const {
+        params: {id},
+        body: {comment},
+        user,
+    } = req;
+    try {
+        const video = await Video.findById(id);
+        const newComment = await Comment.create({
+            text: comment,
+            creator: user.id
+        });
+        video.comments.push(newComment.id);
+        video.save();
     } catch (error) {
         res.status(400);
     } finally {

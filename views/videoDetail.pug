@@ -19,4 +19,12 @@ block content
                 |Upload by 
                 a(href=routes.userDetail(video.creator.id))=video.creator.name
         .video__comments
-            span.video__comment-number #{video.comments.length} 댓글 
+            span.video__comment-number
+                span#jsCommentNumber=video.comments.length 
+                |   댓글 
+            form.add__comment#jsAddComment
+                input(type="text", placeholder="댓글 추가",name="comment")
+            ul.video__comments-list#jsCommentList
+                each comment in video.comments.reverse()
+                    li
+                        span=comment.text

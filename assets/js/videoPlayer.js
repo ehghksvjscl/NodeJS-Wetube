@@ -81,7 +81,7 @@ function setTotalTime() {
 function handleEnded() {
     playBtn.innerHTML = '<i class="fas fa-play"></i>'
     videoPlayer.currentTime = 0;
-    registerView();
+    registerView(); // view 카운터 증가 fetch
 }
 
 function handelDrag(event) {

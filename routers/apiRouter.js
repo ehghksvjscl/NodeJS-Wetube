@@ -10,10 +10,11 @@
 import express from "express";
 
 import routes from "../routers/routes";
-import { postRegisterView } from "../controllers/videoControllers";
+import { postRegisterView,postAddComment } from "../controllers/videoControllers";
 
 const apiRouter = express.Router();
 
 apiRouter.post(routes.registerview,postRegisterView);
+apiRouter.post(routes.addComment,postAddComment);
 
 export default apiRouter;
