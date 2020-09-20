@@ -102,3 +102,20 @@ export const deleteVideo = async(req,res) => {
     }
     res.redirect(routes.home)
 }
+
+export const postRegisterView = async(req,res) => {
+    // 비디오 찾기
+    const { // id 찾기
+        params: {id}
+    } = req;
+    try {
+        const video = await Video.findById(id) // 찾기 없으면 catch
+        video.views = video.views + 1; // 비디오 카운트 + 1
+        video.save(); // 저장
+        res.status(200) // 코드 정상 처리
+    } catch (error) {
+        res.status(400);
+    } finally {
+        res.end();
+    }
+}

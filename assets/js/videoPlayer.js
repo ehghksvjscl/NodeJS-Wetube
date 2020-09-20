@@ -7,6 +7,12 @@ const currentTime = document.getElementById("currentTime");
 const totalTime = document.getElementById("totalTime");
 const volumeRange = document.getElementById("jsVolume");
 
+const registerView = () => {
+  // 유동적으로 url을 가져오기 위해 split을 사용
+  const videoId = window.location.href.split("/videos/")[1];
+  fetch(`/api/${videoId}/view`,{method: "POST"});
+}
+
 function handlePlayClick() {
     if (videoPlayer.paused) {
         videoPlayer.play();
@@ -75,6 +81,7 @@ function setTotalTime() {
 function handleEnded() {
     playBtn.innerHTML = '<i class="fas fa-play"></i>'
     videoPlayer.currentTime = 0;
+    registerView();
 }
 
 function handelDrag(event) {
